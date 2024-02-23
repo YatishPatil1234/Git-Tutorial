@@ -1,3 +1,12 @@
+var name = "Yash";
 
+function sayHello() {
+    console.log(this.name);
+}
 
-console.log("Hello World");
+const sayHi = () => {
+    console.log(this.name);
+}
+
+sayHi();
+sayHello();
