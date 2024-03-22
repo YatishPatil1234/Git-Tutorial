@@ -1,11 +1,13 @@
-function add(a) {
-    return function (b) {
-        return function (c) {
-            return a + b + c;
-        }
-       
-    }
+function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero");
+  }
+  return a / b;
 }
 
-let result = add(2)(3)(4);
-result;
+try {
+  const result = divide(10, 0);
+  console.log("Result:", result);
+} catch (error) {
+  console.error(error.message);
+}
