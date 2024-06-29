@@ -1,13 +1,16 @@
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error("Division by zero");
+const myPromise = new Promise((resolve, reject) => {
+  let success = true;
+  if (success) {
+    resolve("Operation successful");
+  } else {
+    reject("Operation failed");
   }
-  return a / b;
-}
+});
 
-try {
-  const result = divide(10, 0);
-  console.log("Result:", result);
-} catch (error) {
-  console.error(error.message);
-}
+myPromise
+  .then((message) => {
+    console.log(message); // Outputs: Operation successful
+  })
+  .catch((message) => {
+    console.log(message);
+  });
